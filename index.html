@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina 30 Anos - Pool Party & Luau</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Fleur+De+Leah&family=Joti+One&family=Neonderthaw&family=Rubik+Gemstones&family=Sarina&family=WindSong:wght@400;500&family=Zen+Loop:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/webp" href="LUAU.webp">
+</head>
+<body>
+
+<header>
+    <h1 style="font-family: 'WindSong', serif; font-size: 80px; color: #f8239c;"> Marina's </h1>
+    <h1 style="font-family: 'WindSong', serif; font-size: 40px; color: rgb(207, 203, 203);"> 30th Birthday </h1>
+    <p style="font-family: 'Neonderthaw', serif; font-size: 60px; color: rgba(250, 108, 19, 0.978)">Pool Party & Luau</p>
+</header>
+
+<section>
+    <h2 style="font-family: 'WindSong', cursive; font-size: 40px; color: #f8239c;">Boas-vindas!</h2>
+    <p>Você está convidado(a) para celebrar meu aniversário de 30 anos em grande estilo! Prepare-se para um dia de diversão na piscina e uma noite mágica de luau.</p>
+    <p><strong>Data:</strong> Sábado, 08 de março de 2025, às 14h</p>
+    <p><strong>Local:</strong> Casa Frigeri Horn</p>
+</section>
+
+<section>
+    <h2 style="font-family: 'WindSong', cursive; font-size: 40px; color: #f8239c;">Programação</h2>
+    <ul>
+        <li><strong>14h:</strong> Pool Party</li>
+        <li><strong>18h:</strong> Momento para relaxar e Lanche</li>
+        <li><strong>19h:</strong> Luau com fogueira</li>
+        <li><strong>21h:</strong> Janta</li>
+    </ul>
+</section>
+
+<section>
+    <h2 style="font-family: 'WindSong', cursive; font-size: 40px; color: #f8239c;">O que trazer?</h2>
+    <ul>
+        <li>Roupas de banho e toalha</li>
+        <li>Roupa confortável</li>
+        <li>Protetor solar</li>
+        <li>Chinelos</li>
+        <li>Seu colchão se quiser pernoitar</li>
+    </ul>
+    <p><strong>Boa energia e disposição para se divertir!</strong></p>
+</section>
+
+<section>
+    <h2 style="font-family: 'WindSong', cursive; font-size: 40px; color: #f8239c;">Localização</h2>
+    <p>Aqui está o mapa com a localização do evento:</p>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3489.077504132852!2d-50.92668392474368!3d-29.01469528429219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDAwJzUyLjkiUyA1MMKwNTUnMjYuOCJX!5e0!3m2!1spt-BR!2sbr!4v1738541939994!5m2!1spt-BR!2sbr" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<section class="rsvp">
+    <h2 style="font-family: 'WindSong', cursive; font-size: 40px; color: #f8239c;">Confirme sua Presença</h2>
+    <form>
+        <label for="name">Nome:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="guests">Acompanhantes:</label><br>
+        <input type="number" id="guests" name="guests" min="0"><br><br>
+
+        <label for="children">Crianças:</label><br>
+        <input type="number" id="children" name="children" min="0"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <h2 id="countdown-title" style="font-size: 40px; font-weight: bold;">Contagem regressiva:</h2>
+    <div id="countdown"></div>
+    <p style="margin-top: 20px; font-size: 16px; color: #fff;">Desenvolvido por <strong>Marina Borges</strong></p>
+</footer>
+
+<script>
+    const eventDate = new Date('2025-03-08T14:00:00');
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const now = new Date();
+        const timeDiff = eventDate - now;
+
+        if (timeDiff <= 0) {
+            countdownElement.innerHTML = '<p>O grande dia chegou!</p>';
+            return;
+        }
+
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = 
+            `<div class="countdown-item"><span class="countdown-number">${days}</span><br><span class="countdown-label">Dias</span></div>
+            <div class="countdown-item"><span class="countdown-number">${hours}</span><br><span class="countdown-label">Horas</span></div>
+            <div class="countdown-item"><span class="countdown-number">${minutes}</span><br><span class="countdown-label">Minutos</span></div>
+            <div class="countdown-item"><span class="countdown-number">${seconds}</span><br><span class="countdown-label">Segundos</span></div>`;
+    }
+
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>

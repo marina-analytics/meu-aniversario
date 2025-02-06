@@ -1,0 +1,133 @@
+body {
+    font-family: 'zen loop', serif; font-size: 50px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url('FUNDO.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    text-align: center;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+section ul {
+    list-style-type: none; /* Remove os pontos da lista */
+    padding-left: 0; /* Remove a indentação à esquerda */
+}
+
+.rsvp input, .rsvp button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#countdown-title {
+    font-size: 24px;
+    color: #f53098;
+    margin-bottom: 10px;
+}
+
+#countdown {
+    font-size: 36px;
+    color: #FFA500;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Estilo para o contêiner do mapa */
+.map-container {
+    position: relative;
+    width: 100%; /* O mapa ocupará 100% da largura da tela */
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0; /* Altura controlada pelo padding-bottom */
+    margin: 0 auto; /* Centraliza o contêiner */
+}
+
+/* Estilo para o iframe do mapa */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajustes para telas menores (tablets e celulares) */
+@media (max-width: 768px) {
+    body {
+        font-size: 24px; /* Reduz o tamanho da fonte */
+    }
+
+    header h1 {
+        font-size: 50px; /* Diminui os títulos */
+    }
+
+    header h1:nth-child(2) {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px; /* Deixa os parágrafos mais legíveis */
+    }
+
+    .rsvp input, .rsvp button {
+        width: 90%; /* Faz os inputs ocuparem mais a tela */
+    }
+
+    #countdown {
+        flex-wrap: wrap; /* Permite que a contagem fique em várias linhas */
+        gap: 20px; /* Reduz o espaço entre os blocos */
+    }
+
+    .countdown-item {
+        width: 80px; /* Deixa os blocos menores */
+        font-size: 20px;
+    }
+
+    .countdown-number {
+        font-size: 30px;
+    }
+
+    .countdown-label {
+        font-size: 14px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (celulares pequenos) */
+@media (max-width: 480px) {
+    header {
+        padding: 20px; /* Reduz o espaço do cabeçalho */
+    }
+
+    section {
+        margin: 10px; /* Menos margem */
+        padding: 15px;
+    }
+
+    .countdown-item {
+        width: 60px; /* Deixa os blocos menores ainda */
+    }
+
+    .countdown-number {
+        font-size: 24px
